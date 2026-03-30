@@ -1,5 +1,8 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Load root .env so monorepo env vars are available to Next.js API routes
 const rootEnv = path.resolve(process.cwd(), '../.env');
@@ -18,6 +21,11 @@ if (fs.existsSync(rootEnv)) {
 const nextConfig = {
   transpilePackages: ['workflow-builder'],
   eslint: { ignoreDuringBuilds: true },
+  webpack: (config) => {
+    config.resolve.alias['react'] = path.resolve(__dirname, '../node_modules/react');
+    config.resolve.alias['react-dom'] = path.resolve(__dirname, '../node_modules/react-dom');
+    return config;
+  },
 };
 
 export default nextConfig;
