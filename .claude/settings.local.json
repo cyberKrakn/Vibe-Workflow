@@ -6,7 +6,8 @@
       "Bash(venv/Scripts/pip install:*)",
       "Bash(\"C:\\\\Program Files\\\\nodejs\\\\npm.cmd\" install next@15 react@19 react-dom@19 eslint-config-next@15 --save -w client)",
       "Bash(grep -r \"mongodb\\\\|postgres\\\\|sqlite\\\\|mysql\\\\|database\\\\|db\\\\|sqlalchemy\\\\|asyncpg\" /e/CODE/Vibe-Workflow/server --include=*.py)",
-      "Bash(\"C:\\\\Program Files\\\\nodejs\\\\npm.cmd\" run build:lib)"
+      "Bash(\"C:\\\\Program Files\\\\nodejs\\\\npm.cmd\" run build:lib)",
+      "Bash(\"C:\\\\Program Files\\\\nodejs\\\\npm.cmd\" run build)"
     ]
   }
 }

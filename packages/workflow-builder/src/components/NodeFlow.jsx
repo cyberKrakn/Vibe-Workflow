@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useCallback, useEffect, useRef } from "react";
-import { useParams } from "next/navigation";
 import ReactFlow, {
   addEdge,
   Background,
@@ -119,7 +118,7 @@ const getEdgeColor = (sourceHandle, targetHandle, sourceNode = null, targetNode 
   return "white";
 };
 
-const NodeFlow = () => {
+const NodeFlow = ({ workflowId: id }) => {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const [activeHandleColor, setActiveHandleColor] = useState(null);
@@ -152,8 +151,6 @@ const NodeFlow = () => {
   const [isChatLoading, setIsChatLoading] = useState(false);
 
   const { zoomIn, zoomOut, fitView, getNodes, screenToFlowPosition } = useReactFlow();
-  const params = useParams();
-  const { id } = params;
 
   const apiModelsFromBackend =
     nodeSchemas?.categories?.api?.models
