@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build:lib && npm run build -w client"
+  publish = "client/.next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

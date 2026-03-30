@@ -9,8 +9,9 @@
     ],
     "scripts": {
         "dev:app": "npm run dev -w client",
-        "build:app": "npm run build -w client",
+        "dev:server": "cd server && venv\\Scripts\\python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
         "build:lib": "npm run build -w packages/workflow-builder",
-        "install:all": "npm install"
+        "build:app": "npm run build -w client",
+        "build": "npm run build:lib && npm run build:app"
     }
 }
