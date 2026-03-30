@@ -1,5 +1,4 @@
 import axios from "axios";
-import Image from "next/image";
 import React, { useLayoutEffect, useRef, useState } from "react";
 import { FaAngleDown } from "react-icons/fa6";
 import { FiUpload } from "react-icons/fi";

@@ -28,7 +28,6 @@ import ImageGeneration from "./ImageNode";
 import VideoGeneration from "./VideoNode";
 import { setWorkflowIds } from "./WorkflowStore";
 import { apiNodeModels, audioModels, concatModels, imageModels, textModels, videoModels, presets } from "./utility";
-import Link from "next/link";
 import RenderField from "./RenderField";
 import PromptConcate from "./PromptConcate";
 import { TbArrowMerge } from "react-icons/tb";
@@ -1785,12 +1784,12 @@ const NodeFlow = ({ workflowId: id }) => {
       <div className="flex items-center justify-center absolute top-0 z-20 bg-[#151618] w-full py-3 border-b border-gray-800">
         <div className="flex items-center justify-between w-full max-w-[95%] sm:max-w-[90%] lg:max-w-[80%]">
           <div className="flex items-center gap-2 w-[35%]">
-            <Link
+            <a
               href="/workflow"
               className="text-white"
             >
               <FaAngleLeft />
-            </Link>
+            </a>
             <button
               type="button"
               onClick={() => setDropDown(prev => prev === 2 ? 0: 2)}

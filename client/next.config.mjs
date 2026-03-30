@@ -16,9 +16,8 @@ if (fs.existsSync(rootEnv)) {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ['workflow-builder'],
   eslint: { ignoreDuringBuilds: true },
-  serverExternalPackages: ['react-toastify', 'reactflow'],
+  transpilePackages: ['workflow-builder'],
 };
 
 export default nextConfig;
